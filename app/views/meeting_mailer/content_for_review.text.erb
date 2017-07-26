@@ -18,6 +18,12 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 See doc/COPYRIGHT.md for more details.
 
 ++#%>
+<%=t('activerecord.models.meeting_agenda')+":\n" %>
+<% @meeting.contents.each do |content| %>
+  <% if content.type == "MeetingAgenda" %>
+<%=strip_tags(content.text) %>
+  <% end %>
+<% end %>
 
 <%= @meeting.project.name %>: <%= @meeting.title %> (<%= meeting_url(@meeting) %>)
 <%= @meeting.author %>

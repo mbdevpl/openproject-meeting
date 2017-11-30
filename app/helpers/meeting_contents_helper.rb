@@ -137,4 +137,10 @@ module MeetingContentsHelper
                             class: 'button icon-context icon-calendar2'
     end
   end
+  
+  def check_all_in_column_links(form_name, column_id)
+    link_to_function(l(:button_check_all), "checkAllInColumn('#{form_name}', '#{column_id}', true)") +
+      ' | ' +
+      link_to_function(l(:button_uncheck_all), "checkAllInColumn('#{form_name}', '#{column_id}', false)")
+  end
 end

@@ -20,6 +20,7 @@ See doc/COPYRIGHT.md for more details.
 ++#%>
 
 <%= error_messages_for 'meeting' %>
+<%= javascript_include_tag "meeting/meeting.js" %>
 
 <section class="form--section">
 
@@ -96,6 +97,11 @@ See doc/COPYRIGHT.md for more details.
             <th class="form--matrix-header-cell"><%= Meeting.human_attribute_name(:name) %></th>
             <th class="form--matrix-header-cell"><%= Meeting.human_attribute_name(:participants_invited) %></th>
             <th class="form--matrix-header-cell"><%= Meeting.human_attribute_name(:participants_attended) %></th>
+          </tr>
+          <tr class="form--matrix-header-row">
+            <th class="form--matrix-header-cell"></th>
+            <th class="form--matrix-header-cell form--matrix-header-row--link">(<%= check_all_in_column_links 'meeting-form', 'checkbox_invited_' %>)</th>
+            <th class="form--matrix-header-cell form--matrix-header-row--link">(<%= check_all_in_column_links 'meeting-form', 'checkbox_attended_' %>)</th>
           </tr>
         </thead>
         <tbody>

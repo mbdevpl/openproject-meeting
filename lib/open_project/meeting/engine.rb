@@ -64,6 +64,10 @@ module OpenProject::Meeting
     end
 
     patches [:Project]
+
+    assets %w(
+      meeting/meeting.js
+    )
     patch_with_namespace :BasicData, :RoleSeeder
     patch_with_namespace :BasicData, :SettingSeeder
 
